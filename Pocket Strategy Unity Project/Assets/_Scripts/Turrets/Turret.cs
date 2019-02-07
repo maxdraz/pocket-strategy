@@ -1,0 +1,77 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Turret : MonoBehaviour
+{
+
+    [SerializeField]
+    string enemyPathTag;
+    [SerializeField]
+    float turretRange= 10f;
+
+    public Transform turretTransform;
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPoint;
+
+    public float fireCooldown = 0.5f;
+    float fireCooldownLeft;
+    public GameObject[] enemies;
+    public GameObject nearestEnemyGO;
+    public GameObject enemy;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //turretTransform = transform.Find("Turret");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+         enemies = GameObject.FindGameObjectsWithTag(enemyPathTag);
+
+        nearestEnemyGO = null;
+        float distToNearest = Mathf.Infinity;
+
+        foreach(GameObject e in enemies)
+        {
+            float d = Vector3.Distance(this.transform.position, e.transform.position);
+            
+            if(nearestEnemyGO == null || d < distToNearest)
+            {
+                nearestEnemyGO = e;
+                distToNearest = d;
+                
+            }
+        }
+        if(nearestEnemyGO == null )
+        {
+            return;
+        }
+        // ROTATING THE TURRET
+        Vector3 dir = nearestEnemyGO.transform.position - this.transform.position;
+        //get rotation that brings from current to dir (using lookROtation)
+        Quaternion lookRot = Quaternion.LookRotation(dir);
+        turretTransform.rotation = Quaternion.Euler(0, lookRot.eulerAngles.y, 0);
+
+        //FIRING
+        fireCooldownLeft -= Time.deltaTime;
+        if(fireCooldownLeft <= 0 && dir.magnitude <= turretRange)
+        {
+            fireCooldownLeft = fireCooldown;
+            Shoot(enemy);
+        }
+
+        
+
+    }
+
+    void Shoot(GameObject enemy)
+    {
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Bullet b = bulletPrefab.GetComponent<Bullet>();
+
+        b.target = enemy.transform;
+    }
+}
