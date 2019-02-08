@@ -35,6 +35,11 @@ public class Turret : MonoBehaviour
     void Update()
     {
         textDisplay.GetComponent<TextMesh>().text = energy.ToString();
+        //QUICKLY DOUBLING FIRE RATE      CHANGE THIS LATER!!!!
+        if(energy >= 1)
+        {
+            fireCooldown = 0.25f;
+        }
 
         enemies = GameObject.FindGameObjectsWithTag(enemyPathTag);
 
@@ -67,7 +72,7 @@ public class Turret : MonoBehaviour
         if(fireCooldownLeft <= 0 && dir.magnitude <= turretRange)
         {
             fireCooldownLeft = fireCooldown;
-            Shoot(enemy);
+            Shoot(nearestEnemyGO);
         }
 
 
@@ -77,7 +82,7 @@ public class Turret : MonoBehaviour
     void Shoot(GameObject enemy)
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-        Bullet b = bulletPrefab.GetComponent<Bullet>();
+        Bullet b = bulletGO.GetComponent<Bullet>();
 
         b.target = enemy.transform;
     }
