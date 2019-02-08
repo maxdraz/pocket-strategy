@@ -1739,7 +1739,7 @@ MonoBehaviour:
   waveComps:
   - enemyPrefab: {fileID: 5562385557418977722, guid: a1f38205561058a42bfcbac10901cfc8,
       type: 3}
-    num: 10
+    num: 50
 --- !u!1001 &798602782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   waveComps:
   - enemyPrefab: {fileID: 1590473200969508023, guid: 5ef49b8470e1ac7468a38fede50861d2,
       type: 3}
-    num: 10
+    num: 50
 --- !u!1 &1183730141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
   waveComps:
   - enemyPrefab: {fileID: 2165712466971910873, guid: efc6613d78a5fbd4886568c30669f74d,
       type: 3}
-    num: 10
+    num: 50
 --- !u!1001 &2131028513
 PrefabInstance:
   m_ObjectHideFlags: 0
