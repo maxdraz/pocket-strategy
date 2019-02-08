@@ -20,6 +20,11 @@ public class Turret : MonoBehaviour
     public GameObject nearestEnemyGO;
     public GameObject enemy;
 
+    
+    public int energy;
+    public GameObject textDisplay;
+    public EnergyManager em;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +34,9 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         enemies = GameObject.FindGameObjectsWithTag(enemyPathTag);
+        textDisplay.GetComponent<TextMesh>().text = energy.ToString();
+
+        enemies = GameObject.FindGameObjectsWithTag(enemyPathTag);
 
         nearestEnemyGO = null;
         float distToNearest = Mathf.Infinity;
@@ -63,8 +70,8 @@ public class Turret : MonoBehaviour
             Shoot(enemy);
         }
 
-        
 
+        
     }
 
     void Shoot(GameObject enemy)
@@ -73,5 +80,47 @@ public class Turret : MonoBehaviour
         Bullet b = bulletPrefab.GetComponent<Bullet>();
 
         b.target = enemy.transform;
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButton(0)){
+            //add energy
+            AddEnergy();
+            Debug.Log(gameObject.name + "Was left clicked");
+            return;
+           
+        }
+        
+        if (Input.GetMouseButton(1)){
+            //remove energy
+            RemoveEnergy();
+            Debug.Log(gameObject.name + "Was right clicked");
+            return;
+        }
+
+    }
+
+    void AddEnergy()
+    {
+        //do these in methods later
+        if (em.energy <= 0)
+        {
+            return;
+        }
+        em.energy -= 1;
+        energy += 1;
+
+    }
+
+    void RemoveEnergy()
+    {
+        if(energy <= 0)
+        {
+            return;
+        }
+
+        energy -= 1;
+        em.energy += 1;
     }
 }
