@@ -6,15 +6,29 @@ public class Enemy : MonoBehaviour
 {
     public GameObject PathGO;
 
+    public int moneyworth;
     public float speed = 5f;
     public float health = 2f;
+    public float damage = 1f;
     public float rotSpeed = 2f;
 
+    MoneyManager mm;
     Transform targetWaypoint;
     int waypointIndex = 0;
+    HealthManager hm;
+
+    private void Start()
+    {
+        mm = GameObject.FindWithTag("GM").GetComponent<MoneyManager>();
+        hm = GameObject.FindWithTag("GM").GetComponent<HealthManager>();
+    }
 
     void GetNextWaypoint()
     {
+        if(targetWaypoint == null)
+        {
+            ReachedBase();
+        }
         targetWaypoint = PathGO.transform.GetChild(waypointIndex);
         waypointIndex++ ;
     }
@@ -52,6 +66,7 @@ public class Enemy : MonoBehaviour
 
     void ReachedBase()
     {
+        DealDamage(damage);
         Destroy(gameObject);
     }
 
@@ -66,6 +81,14 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        mm.AddMoney(moneyworth);
         Destroy(this.gameObject);
+    }
+
+    void DealDamage(float damage)
+    {
+
+        hm.health -= damage;
+
     }
 }

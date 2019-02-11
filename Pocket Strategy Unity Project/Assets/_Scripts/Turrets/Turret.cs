@@ -34,6 +34,7 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(CheckMouseInput());  
         textDisplay.GetComponent<TextMesh>().text = energy.ToString();
         //QUICKLY DOUBLING FIRE RATE      CHANGE THIS LATER!!!!
         if(energy >= 2)
@@ -90,23 +91,43 @@ public class Turret : MonoBehaviour
         b.target = enemy.transform;
     }
 
-    private void OnMouseOver()
+   
+
+    IEnumerator CheckMouseInput()
     {
-        if (Input.GetMouseButton(0)){
-            //add energy
-            AddEnergy();
-            Debug.Log(gameObject.name + "Was left clicked");
-            return;
-           
-        }
-        
-        if (Input.GetMouseButton(1)){
-            //remove energy
-            RemoveEnergy();
-            Debug.Log(gameObject.name + "Was right clicked");
-            return;
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if(Physics.Raycast(ray, out hit, 100f))
+            {
+                if (hit.transform.gameObject == this.gameObject)
+                {
+                    //add energy
+                    AddEnergy();
+                    Debug.Log(gameObject.name + "Was left clicked");
+                }
+            }
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                if (hit.transform.gameObject == this.gameObject)
+                {
+                    //add energy
+                    RemoveEnergy();
+                    Debug.Log(gameObject.name + "Was right clicked");
+                }
+            }
+        }
+
+        yield return null;
     }
 
     void AddEnergy()

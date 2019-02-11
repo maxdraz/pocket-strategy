@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public class WaveComponent
     {
         public GameObject enemyPrefab;
-        
+        public GameObject[] objs;
         public int num;
         [System.NonSerialized]
         public int spawned = 0;

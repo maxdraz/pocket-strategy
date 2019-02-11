@@ -24,7 +24,7 @@ public class EnergyManager : MonoBehaviour
      //   t.GetComponent<Turret>().energy += 1;
 
 
-    //}
+    //              }
     
 
     
