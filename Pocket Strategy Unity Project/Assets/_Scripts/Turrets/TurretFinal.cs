@@ -19,7 +19,7 @@ public class TurretFinal : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(enemies.Count);
+        
 
         ////if enemy has died, remove it from queue 
         //if (enemies != null)
@@ -46,10 +46,14 @@ public class TurretFinal : MonoBehaviour
         //    nearestEnemy = enemies.Dequeue();
             
         //}
-        if(nearestEnemy == null)
+        if(nearestEnemy== null)
         {
             //Reset turret rotation
             RotateTurret(transform.position + transform.forward, 2f);
+        }
+
+        if(nearestEnemy == null && enemies.Count >= 1)
+        {           
             //Find New Enemy
             FindNewEnemy();
         }
@@ -62,11 +66,15 @@ public class TurretFinal : MonoBehaviour
 
     void FindNewEnemy()
     {
-        if(enemies!= null)
+        if(enemies == null)
+        {
+            return;
+        }
+        else
         {
             nearestEnemy = enemies.Dequeue();
-        } else
-            return;
+        }
+        
     }
 
     void Fire()

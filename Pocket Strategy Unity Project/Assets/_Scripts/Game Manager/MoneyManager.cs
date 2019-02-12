@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
 {
-    public int money;
+    public float money;
     public Text moneyText;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +19,13 @@ public class MoneyManager : MonoBehaviour
         moneyText.text = "Money: " + money.ToString();
     }
 
-    public void AddMoney(int m)
+    public void AddMoney(float m)
     {
         money += m;
+    }
+
+    public void RemoveMoney(float m)
+    {
+        money -= m;
     }
 }

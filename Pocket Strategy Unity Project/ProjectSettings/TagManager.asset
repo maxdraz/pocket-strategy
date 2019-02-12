@@ -10,6 +10,8 @@ TagManager:
   - GM
   - Base
   - Enemy
+  - BuildPad
+  - Turret
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - 
   - PostProcessing
   - Enemy
-  - 
-  - 
+  - Turret
+  - Base
   - 
   - 
   - 
