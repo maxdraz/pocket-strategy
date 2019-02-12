@@ -8,45 +8,29 @@ public class TurretFinal : MonoBehaviour
     public Transform bulletSpawn;
     public float fireCD;
     float fireCDRemaining = 0;
+    public int energy;
+    public float energyCD;
+    public TextMesh energyText;
 
     public Queue<GameObject> enemies = new Queue<GameObject>();
     public GameObject nearestEnemy;
 
     public Transform turretTransform;
-  
+     GameObject gm;
+    
+    
 
-   
+    private void Start()
+    {
+        gm = GameObject.FindWithTag("GM");
+    }
 
     private void Update()
     {
-        
+        //energy text
+        energyText.text = energy.ToString();
 
-        ////if enemy has died, remove it from queue 
-        //if (enemies != null)
-        //{
-        //    foreach (GameObject enemy in enemies)
-        //    {
-               
-                    
-        //        if(enemy == null)
-        //        {
-        //            enemies.Dequeue();
-        //        }
-               
-        //    }
-        //    //nearestEnemy = enemies.Dequeue();
-        //    //turretTransform.LookAt(nearestEnemy.transform);
-        //}
-
-        ////turretTransform.LookAt(nearestEnemy.transform);
-
-        ////get the nearest enemy
-        //if (enemies != null)
-        //{
-        //    nearestEnemy = enemies.Dequeue();
-            
-        //}
-        if(nearestEnemy== null)
+        if (nearestEnemy== null)
         {
             //Reset turret rotation
             RotateTurret(transform.position + transform.forward, 2f);
@@ -57,7 +41,7 @@ public class TurretFinal : MonoBehaviour
             //Find New Enemy
             FindNewEnemy();
         }
-        else if(nearestEnemy)
+        else if(nearestEnemy && energy > 0)
         {
             Fire();
         }
