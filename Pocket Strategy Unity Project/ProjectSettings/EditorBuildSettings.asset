@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Personal/Final Scene.unity
+    path: Assets/_Scenes/Personal/Max/Final Scene.unity
     guid: 36acf84e10be1e448bbc521c1efdd28e
   m_configObjects: {}
