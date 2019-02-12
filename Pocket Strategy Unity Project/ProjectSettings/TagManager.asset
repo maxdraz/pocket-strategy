@@ -9,6 +9,7 @@ TagManager:
   - EnemyPathM
   - GM
   - Base
+  - Enemy
   layers:
   - Default
   - TransparentFX

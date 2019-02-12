@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyFinal : MonoBehaviour
 {
-    public int health;
+    public float health = 5f;
     public float damage;
 
     public Transform baseTransform;
@@ -27,6 +27,10 @@ public class EnemyFinal : MonoBehaviour
     {
         MoveTo(baseTransform);
 
+        if(health <= 0)
+        {
+            Die();
+        }
        
     }
 
@@ -44,5 +48,15 @@ public class EnemyFinal : MonoBehaviour
             
             Destroy(gameObject);
         }
+    }
+
+   public void TakeDamage(float dmg)
+    {
+        health -= dmg;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
