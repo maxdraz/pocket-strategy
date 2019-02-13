@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,8 +285,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You must protect your base by powering your up your turrets. Enemies will
     approach your base from all sides so balance your defences. Survive for as long
-    as possible!\n\nControls\n\nLeft Click on a turret to power it up.\nRight Click
-    on a turret to take power away. \nThere is a delay between powering up turrets
+    as possible!\n\nCONTROLS\n\nLeft Click on a turret to power it up.\nRight Click
+    on a turret to take power away. \n\nThere is a delay between powering up turrets
     so be careful.\nLeft click on white spaces on the map to build turrets there for
     100 coins.\n\nThe more power you put into a turret the stronger it becomes.\nThere
     are number values beside each turret to show how much power is currently in it."
