@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DestoryAfterTime : MonoBehaviour
 {
+
+    public float time;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DestroyAfterT(time));
     }
 
     // Update is called once per frame
@@ -15,6 +18,8 @@ public class DestoryAfterTime : MonoBehaviour
     {
         
     }
+
+    
 
     IEnumerator DestroyAfterT(float t)
     {

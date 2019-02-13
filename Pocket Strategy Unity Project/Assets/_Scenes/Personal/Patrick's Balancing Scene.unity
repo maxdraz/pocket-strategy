@@ -305,14 +305,14 @@ RectTransform:
   m_GameObject: {fileID: 217712704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 596564065}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336.5, y: 146.25}
+  m_AnchoredPosition: {x: -336.5, y: 139.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217712706
@@ -640,14 +640,14 @@ RectTransform:
   m_GameObject: {fileID: 382736044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 596564065}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336.5, y: 162.8}
+  m_AnchoredPosition: {x: -336.5, y: 159.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &382736046
@@ -1880,7 +1880,7 @@ RectTransform:
   m_GameObject: {fileID: 875543666}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.1}
   m_Children: []
   m_Father: {fileID: 596564065}
   m_RootOrder: 1
@@ -2653,7 +2653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.26, y: 127}
+  m_AnchoredPosition: {x: -322.9, y: 115.1}
   m_SizeDelta: {x: 183.53, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307843635
@@ -3736,12 +3736,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3167940305651186888, guid: 52538a9e1722d3541b445334be8d2eec,
-        type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 2793495726818934359, guid: 91d650fc8bd9fe64381bf13ea95de7e7,
-        type: 3}
     - target: {fileID: 6273682240473813039, guid: 52538a9e1722d3541b445334be8d2eec,
         type: 3}
       propertyPath: target
@@ -4528,6 +4522,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: GM
       objectReference: {fileID: 0}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: energyText
+      value: 
+      objectReference: {fileID: 217712706}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: energy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: maxEnergy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: upgradecostText
+      value: 
+      objectReference: {fileID: 623421285}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: upgradeCost
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: costIncrement
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6635063331725754823, guid: 86b3bb5f4b9269546b7a738951a51934,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4608,36 +4632,6 @@ PrefabInstance:
       propertyPath: espawner
       value: 
       objectReference: {fileID: 1191927899}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: energyText
-      value: 
-      objectReference: {fileID: 217712706}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: energy
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: maxEnergy
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: upgradecostText
-      value: 
-      objectReference: {fileID: 623421285}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: upgradeCost
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
-        type: 3}
-      propertyPath: costIncrement
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b3bb5f4b9269546b7a738951a51934, type: 3}
 --- !u!1001 &6763967266921516737
