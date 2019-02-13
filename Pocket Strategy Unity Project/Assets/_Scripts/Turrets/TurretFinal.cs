@@ -34,6 +34,7 @@ public class TurretFinal : MonoBehaviour
         {
             //Reset turret rotation
             RotateTurret(transform.position + transform.forward, 2f);
+            fireCDRemaining = fireCD;
         }
 
         if(nearestEnemy == null && enemies.Count >= 1)
@@ -63,6 +64,7 @@ public class TurretFinal : MonoBehaviour
 
     void Fire()
     {
+        Debug.Log(fireCDRemaining);
         fireCDRemaining -= Time.deltaTime;
         if(fireCDRemaining <= 0)
         {
