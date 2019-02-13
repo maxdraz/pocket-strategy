@@ -14,6 +14,7 @@ public class EnergyManager : MonoBehaviour
     public float costIncrement;
     public Text upgradecostText;
     MoneyManager mm;
+    public GameObject energyOrbPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,12 @@ public class EnergyManager : MonoBehaviour
         else
         {
             energy -= 1;
+            //instantiate energy orb
+           // GameObject energyOrbGO = (GameObject)Instantiate(energyOrbPrefab);
+            //energyOrbGO.transform.position = transform.position;
+           // EnergyOrb eo = energyOrbGO.GetComponent<EnergyOrb>();
+           // StartCoroutine(eo.TravelTo(t.transform, cd));
+
             yield return new WaitForSeconds(cd);
             t.energy += 1;
         }
