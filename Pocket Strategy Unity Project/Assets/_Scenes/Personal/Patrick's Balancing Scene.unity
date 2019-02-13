@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -276,7 +276,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217712704
 GameObject:
@@ -1819,7 +1819,7 @@ PrefabInstance:
     - target: {fileID: 5939469458543018138, guid: 348f4fb8b6b96b24ba30c91e25f056b2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5939469458543018138, guid: 348f4fb8b6b96b24ba30c91e25f056b2,
         type: 3}
@@ -2815,7 +2815,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1457105247
 GameObject:
@@ -2928,7 +2928,7 @@ Transform:
   - {fileID: 612608817}
   - {fileID: 1731448960}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 7.8150005, z: 0}
 --- !u!1 &1462958539
 GameObject:
@@ -4316,7 +4316,7 @@ PrefabInstance:
     - target: {fileID: 1692299482890770685, guid: 52538a9e1722d3541b445334be8d2eec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1692299482890770685, guid: 52538a9e1722d3541b445334be8d2eec,
         type: 3}
@@ -4425,11 +4425,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemySpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 5153385303541629263, guid: e109e85287e1c8e4b850ed7c0c6bad8c,
-        type: 3}
-      propertyPath: waves.Array.data[0].numToSpawn
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5153385303541629262, guid: e109e85287e1c8e4b850ed7c0c6bad8c,
         type: 3}
@@ -4731,7 +4726,7 @@ PrefabInstance:
     - target: {fileID: 8706404108454586114, guid: f7d36bb8b6367e946ae33f8d38b15bd7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8706404108454586114, guid: f7d36bb8b6367e946ae33f8d38b15bd7,
         type: 3}

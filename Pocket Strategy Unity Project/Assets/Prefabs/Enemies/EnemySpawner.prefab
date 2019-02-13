@@ -147,7 +147,7 @@ MonoBehaviour:
   waves:
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
-    numToSpawn: 40
+    numToSpawn: 2
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
@@ -159,14 +159,17 @@ MonoBehaviour:
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    - {fileID: 4862301605751197192, guid: 840a2eb3069f79f43ba70ad55ee50cd8, type: 3}
     numToSpawn: 8
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    - {fileID: 4862301605751197192, guid: 840a2eb3069f79f43ba70ad55ee50cd8, type: 3}
     numToSpawn: 10
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    - {fileID: 4862301605751197192, guid: 840a2eb3069f79f43ba70ad55ee50cd8, type: 3}
     numToSpawn: 12
     spawned: 0
   - enemies:
@@ -175,6 +178,7 @@ MonoBehaviour:
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    - {fileID: 4862301605751197192, guid: 840a2eb3069f79f43ba70ad55ee50cd8, type: 3}
     numToSpawn: 16
     spawned: 0
   - enemies:
@@ -183,6 +187,7 @@ MonoBehaviour:
     spawned: 0
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    - {fileID: 4862301605751197192, guid: 840a2eb3069f79f43ba70ad55ee50cd8, type: 3}
     numToSpawn: 20
     spawned: 0
 --- !u!1 &5153385303922681056
