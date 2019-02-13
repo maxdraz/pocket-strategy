@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d10160b277a4ba488e7e34ffd03b58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveCD: 2
-  spawnCD: 0.5
+  waveCD: 3
+  spawnCD: 1
   spawnPoints: []
   activeEnemies: []
   currentWave: 0
@@ -156,6 +156,34 @@ MonoBehaviour:
   - enemies:
     - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
     numToSpawn: 6
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 8
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 10
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 12
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 14
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 16
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 18
+    spawned: 0
+  - enemies:
+    - {fileID: 205059494, guid: 1e5f66f649a11a746855e53d991213d7, type: 3}
+    numToSpawn: 20
     spawned: 0
 --- !u!1 &5153385303922681056
 GameObject:
