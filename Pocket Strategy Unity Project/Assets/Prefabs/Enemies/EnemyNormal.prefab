@@ -80,6 +80,10 @@ MonoBehaviour:
   health: 3
   damage: 10
   worth: 10
+  DeathExplosion: {fileID: 6465324410193717779, guid: b65d76b106413ee4f8dbe10f37cce3aa,
+    type: 3}
+  AttackExplosion: {fileID: 4177199633662017783, guid: 4e2ce839c8e8d6144bf055176ca53879,
+    type: 3}
   baseTransform: {fileID: 0}
 --- !u!195 &205059496
 NavMeshAgent:

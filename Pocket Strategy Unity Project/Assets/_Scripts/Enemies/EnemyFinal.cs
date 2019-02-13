@@ -9,6 +9,8 @@ public class EnemyFinal : MonoBehaviour
     public float damage;
     public float worth = 10f;
 
+    public GameObject DeathExplosion, AttackExplosion;
+
     public Transform baseTransform;
     NavMeshAgent agent;
 
@@ -36,6 +38,7 @@ public class EnemyFinal : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            DeathExplode(); //Instantiating method
         }
        
     }
@@ -53,6 +56,7 @@ public class EnemyFinal : MonoBehaviour
             //destroy yourself
             DamageBase(damage);
             Destroy(gameObject);
+            AttackExplode(); //Instantiating Method
         }
     }
 
@@ -74,5 +78,19 @@ public class EnemyFinal : MonoBehaviour
     void DamageBase(float dmg)
     {
         gm.GetComponent<HealthManager>().health -= dmg;
+    }
+
+    //Particle system that plays when turret kills enemy
+    void DeathExplode()
+    {
+        GameObject firework = Instantiate(DeathExplosion, transform.position, Quaternion.identity);
+        firework.GetComponent<ParticleSystem>().Play();
+    }
+
+    //Particle system that plays when enemy reaches base
+    void AttackExplode()
+    {
+        GameObject firework = Instantiate(AttackExplosion, transform.position, Quaternion.identity);
+        firework.GetComponent<ParticleSystem>().Play();
     }
 }
