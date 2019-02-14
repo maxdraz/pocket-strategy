@@ -6,7 +6,12 @@ public class TurretFinal : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public float damage;
+    float originalDamage;
+    public float damageUpgrade;
     public float fireCD;
+    float originalFireCD;
+    public float cooldownUpgrade = 0.5f;
     float fireCDRemaining = 0;
     public int energy;
     public int maxEnergy = 5;
@@ -18,16 +23,23 @@ public class TurretFinal : MonoBehaviour
 
     public Transform turretTransform;
      GameObject gm;
+
+    public TextMesh fireRateUp;
+    public TextMesh damageUp;
     
     
 
     private void Start()
     {
         gm = GameObject.FindWithTag("GM");
+        originalDamage = damage;
+        originalFireCD = fireCD;
     }
 
     private void Update()
     {
+        CheckForUpgrades();
+
         //energy text
         energyText.text = energy.ToString() + "/" + maxEnergy.ToString();
 
@@ -73,6 +85,7 @@ public class TurretFinal : MonoBehaviour
             //instantiate bullet
             GameObject bullet = (GameObject)Instantiate(bulletPrefab);
             bullet.transform.position = bulletSpawn.position;
+            bullet.GetComponent<Bullet>().damage = damage;
             bullet.GetComponent<Bullet>().target = nearestEnemy.transform;
         }
         //rotate turret
@@ -106,5 +119,36 @@ public class TurretFinal : MonoBehaviour
             nearestEnemy = null; 
           // enemies.Dequeue();
         }
+    }
+
+    void CheckForUpgrades()
+    {
+        if(energy < 2)
+        {
+            energyText.color = Color.white;
+            fireCD = originalFireCD;
+            damage = originalDamage;
+            return;
+        }else if(energy == 2)
+        {
+            FireRateUp();
+            fireRateUp.gameObject.SetActive(true);
+        } else if(energy == maxEnergy){
+
+            DamageUpgrade();
+            damageUp.gameObject.SetActive(true);
+        }
+    }
+
+    void FireRateUp()
+    {
+        fireCD = cooldownUpgrade;
+        energyText.color = fireRateUp.color;
+    }
+
+    void DamageUpgrade()
+    {
+        damage = damageUpgrade;
+        energyText.color = damageUp.color;
     }
 }

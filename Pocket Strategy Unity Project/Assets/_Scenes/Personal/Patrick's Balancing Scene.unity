@@ -4337,11 +4337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret
       objectReference: {fileID: 0}
-    - target: {fileID: 1692299482890770684, guid: 52538a9e1722d3541b445334be8d2eec,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1692299482890770685, guid: 52538a9e1722d3541b445334be8d2eec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4397,11 +4392,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6273682240473813039, guid: 52538a9e1722d3541b445334be8d2eec,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 453912444}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52538a9e1722d3541b445334be8d2eec, type: 3}
 --- !u!1001 &1616690943865376703
