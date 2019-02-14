@@ -205,6 +205,7 @@ RectTransform:
   - {fileID: 1856805377}
   - {fileID: 713716440}
   - {fileID: 1018601020}
+  - {fileID: 681575185}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -213,6 +214,89 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &681575184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681575185}
+  - component: {fileID: 681575187}
+  - component: {fileID: 681575186}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &681575185
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681575184}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.345671, y: 0.345671, z: 0.345671}
+  m_Children: []
+  m_Father: {fileID: 148667463}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -30}
+  m_SizeDelta: {x: 1600, y: 1200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &681575186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681575184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5896226, g: 1, b: 0.95249224, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b815f788008141a48a9c99db7e6ba2a4, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "CONTROLS:\nLeft Click on a turret to power it up.\nRight Click on a turret
+    to take power away. \n\nThere is a delay between powering up turrets, so be careful.\nLeft
+    click on white spaces on the map to build turrets there for 100 coins.\nThe more
+    power you put into a turret the stronger it becomes.\nThere are numbers beside
+    each turret to show how much power it has.\n\n"
+--- !u!222 &681575187
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681575184}
+  m_CullTransparentMesh: 0
 --- !u!1 &713716439
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,11 +369,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "You must protect your base by powering your up your turrets.\nEnemies will
     approach your base from all sides so balance your defences. \nSurvive for as long
-    as possible!\n\nCONTROLS:\nLeft Click on a turret to power it up.\nRight Click
-    on a turret to take power away. \n\nThere is a delay between powering up turrets,
-    so be careful.\nLeft click on white spaces on the map to build turrets there for
-    100 coins.\nThe more power you put into a turret the stronger it becomes.\nThere
-    are numbers beside each turret to show how much power it has."
+    as possible!\n\n"
 --- !u!222 &713716442
 CanvasRenderer:
   m_ObjectHideFlags: 0
