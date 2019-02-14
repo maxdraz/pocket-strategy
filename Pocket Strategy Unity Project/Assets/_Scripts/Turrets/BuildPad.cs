@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BuildPad : MonoBehaviour
 {
-    public GameObject turretPrefab;
-    public float cost;
-    public float costIncrement;
+    public GameObject turretPrefab;    
+    public float price;
+    CostManager cm;
     GameObject gm;
     MoneyManager mm;
     public float cooldown;
@@ -16,11 +16,17 @@ public class BuildPad : MonoBehaviour
     {
         gm = GameObject.FindWithTag("GM");
         mm = gm.GetComponent<MoneyManager>();
+        cm = gm.GetComponent<CostManager>();
+    }
+
+    private void Start()
+    {
+        price = cm.baseTurretCost;
     }
 
     private void OnMouseDown()
     {
-        if(mm.money < cost)
+        if(mm.money < price)
         {
             StartCoroutine(NotEnoughMoney(cooldown));
         }
@@ -33,7 +39,7 @@ public class BuildPad : MonoBehaviour
     IEnumerator NotEnoughMoney(float t)
     {
         notEnoughTextGO.SetActive(true);
-        notEnoughTextGO.GetComponent<TextMesh>().text = "Cost: " + cost.ToString();
+        notEnoughTextGO.GetComponent<TextMesh>().text = "Cost: " + price.ToString();
         yield return new WaitForSeconds(t);
         notEnoughTextGO.SetActive(false);
     }
@@ -41,7 +47,8 @@ public class BuildPad : MonoBehaviour
     void SpawnTurret()
     {
         //take away money
-        mm.RemoveMoney(cost);
+        mm.RemoveMoney(price);
+        cm.turretsOwned += 1;
         //instantiate turret GO
         GameObject turret = (GameObject)Instantiate(turretPrefab);
         turret.transform.position = transform.position;
@@ -51,10 +58,12 @@ public class BuildPad : MonoBehaviour
         BuildPad[] buildpads= FindObjectsOfType<BuildPad>();
         foreach(BuildPad bp in buildpads)
         {
-            bp.cost += costIncrement;
+            bp.price = cm.CalculateNewTurretPrice();
         }
 
         //destroy the buildpad
         Destroy(gameObject);
     }
+
+   
 }

@@ -12,8 +12,10 @@ public class HealthManager : MonoBehaviour
     public GameObject gameOver;
     public AudioSource gameMusic;
     public AudioSource gameOverMusic;
+    public AudioSource baseDestroyed;
     public Text scoreText;
     public EnemySpawnerFinal espawner;
+    bool gameOverBool;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +27,25 @@ public class HealthManager : MonoBehaviour
     {
         healthText.text = "Health: " + health.ToString();
 
-        if (health <= 0)
-        {
-            gameMusic.Stop();
-            //gameOverMusic.Play();
-            GameOver();
-        }
+      //  if (gameOverBool)
+       // {
+            if (health <= 0 )
+            {
+                gameMusic.Stop();
+                //gameOverMusic.Play();
+                GameOver();
+                gameOverBool = false;
+            }
+       // }
     }
 
     void GameOver()
     {
+        //audio for game over
+        gameMusic.Stop();
+        gameOverMusic.gameObject.SetActive(true);
+        baseDestroyed.gameObject.SetActive(true);
+
         gameOver.SetActive(true);
         scoreText.text = "You survived " + espawner.currentWave.ToString() + " waves!";
 
@@ -45,5 +56,6 @@ public class HealthManager : MonoBehaviour
             Time.timeScale = 1f;
             SceneManager.LoadScene(0);
         }
+      
     }
 }

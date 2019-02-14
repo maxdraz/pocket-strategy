@@ -10,8 +10,8 @@ public class EnergyManager : MonoBehaviour
     public Text energyText;
     public int maxEnergy = 2;
 
-    public float upgradeCost;
-    public float costIncrement;
+    public float price;
+    CostManager cm;
     public Text upgradecostText;
     MoneyManager mm;
     public GameObject energyOrbPrefab;
@@ -20,9 +20,13 @@ public class EnergyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cm = GameObject.FindWithTag("GM").GetComponent<CostManager>();
         mm = GameObject.FindWithTag("GM").GetComponent<MoneyManager>();
         energy = maxEnergy;
-        upgradecostText.text = "+1 Energy: Cost " + upgradeCost.ToString();
+        price = cm.baseEnergyCost;
+        upgradecostText.text = "+1 Energy: Cost " + price.ToString();
+
+       
     }
 
     // Update is called once per frame
@@ -80,17 +84,18 @@ public class EnergyManager : MonoBehaviour
 
     public void UpgradeEnergy()
     {
-        if(upgradeCost > mm.money)
+        if(price > mm.money)
         {
             return;
         }
         else
         {
-            mm.RemoveMoney(upgradeCost);
+            mm.RemoveMoney(price);
             maxEnergy += 1;
             energy += 1;
-            upgradeCost += costIncrement;
-            upgradecostText.text = "+1 Energy: Cost " + upgradeCost.ToString();
+            price = cm.CalculateNewEnergyPrice();
+            cm.energyOwned += 1;
+            upgradecostText.text = "+1 Energy: Cost " + price.ToString();
         }
         
     }

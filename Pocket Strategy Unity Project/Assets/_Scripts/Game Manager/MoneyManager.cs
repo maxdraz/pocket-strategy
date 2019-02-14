@@ -28,4 +28,6 @@ public class MoneyManager : MonoBehaviour
     {
         money -= m;
     }
+
+    
 }
