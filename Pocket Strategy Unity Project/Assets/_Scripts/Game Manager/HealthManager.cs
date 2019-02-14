@@ -10,6 +10,8 @@ public class HealthManager : MonoBehaviour
     public Text healthText;
 
     public GameObject gameOver;
+    public AudioSource gameMusic;
+    public AudioSource gameOverMusic;
     public Text scoreText;
     public EnemySpawnerFinal espawner;
     // Start is called before the first frame update
@@ -25,6 +27,8 @@ public class HealthManager : MonoBehaviour
 
         if (health <= 0)
         {
+            gameMusic.Stop();
+            //gameOverMusic.Play();
             GameOver();
         }
     }
