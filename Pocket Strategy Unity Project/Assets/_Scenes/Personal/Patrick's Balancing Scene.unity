@@ -4595,6 +4595,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8196373665479766840, guid: 66f85818de7a3104589433b97f31ffeb,
         type: 3}
+    - target: {fileID: 6635063331725754816, guid: 86b3bb5f4b9269546b7a738951a51934,
+        type: 3}
+      propertyPath: energyOrbUsedPrefab
+      value: 
+      objectReference: {fileID: 7471667606347298708, guid: 65e5608a840562f4ea9108630c872850,
+        type: 3}
     - target: {fileID: 6635063331725754823, guid: 86b3bb5f4b9269546b7a738951a51934,
         type: 3}
       propertyPath: m_LocalPosition.x

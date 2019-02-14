@@ -9,6 +9,7 @@ public class TurretFinal : MonoBehaviour
     public float fireCD;
     float fireCDRemaining = 0;
     public int energy;
+    public int maxEnergy = 5;
     public float energyCD;
     public TextMesh energyText;
 
@@ -28,7 +29,7 @@ public class TurretFinal : MonoBehaviour
     private void Update()
     {
         //energy text
-        energyText.text = energy.ToString();
+        energyText.text = energy.ToString() + "/" + maxEnergy.ToString();
 
         if (nearestEnemy== null)
         {

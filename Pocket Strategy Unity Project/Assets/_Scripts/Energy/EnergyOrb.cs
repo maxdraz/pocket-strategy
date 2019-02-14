@@ -5,22 +5,25 @@ using UnityEngine.AI;
 
 public class EnergyOrb : MonoBehaviour
 {
-    NavMeshAgent agent;
+    //NavMeshAgent agent;
+    public float speed;
     public Transform target;
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        //agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
         if (target != null)
         {
-            float dist = Vector3.Magnitude(target.position - transform.position);
-            Debug.Log(dist);
-            agent.SetDestination(target.position);
 
+            Vector3 toTarget = target.position - transform.position;
+            float dist = Vector3.Magnitude(toTarget);
+            Debug.Log(dist);
+            //agent.SetDestination(target.position);
+            transform.position += toTarget.normalized * speed * Time.deltaTime;
             if(dist < 1f)
             {
                 Destroy(gameObject);
@@ -38,9 +41,9 @@ public class EnergyOrb : MonoBehaviour
         Vector3 toTarget = target.position - transform.position;
         float distance = Vector3.Magnitude(toTarget);
 
-        float speed = distance / timeToReach;
+        float spd = distance / timeToReach;
 
-       agent.speed = speed;
+       speed = spd;
     }
 
    

@@ -25,12 +25,15 @@ public class MouseClickDetector : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if(Physics.Raycast(ray,out hit, 1000f, mask)){
-
-                
+                              
                 
                     Debug.Log("clicked turret");
                     TurretFinal turret = hit.collider.GetComponentInParent<TurretFinal>();
-                    StartCoroutine(em.GiveEnergy(turret, turret.energyCD));                }
+                if (turret.energy < turret.maxEnergy)
+                {
+                    StartCoroutine(em.GiveEnergy(turret, turret.energyCD));
+                }
+            }
 
             }
         //right click
@@ -41,10 +44,8 @@ public class MouseClickDetector : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 1000f, mask))
             {
-
-
-
-                Debug.Log("right clicked turret");
+               
+                    Debug.Log("right clicked turret");
                 TurretFinal turret = hit.collider.GetComponentInParent<TurretFinal>();
                 StartCoroutine(em.TakeEnergy(turret, turret.energyCD));
             }
