@@ -17,8 +17,15 @@ public class EnergyOrb : MonoBehaviour
     {
         if (target != null)
         {
-            Debug.Log("moving to target");
+            float dist = Vector3.Magnitude(target.position - transform.position);
+            Debug.Log(dist);
             agent.SetDestination(target.position);
+
+            if(dist < 1f)
+            {
+                Destroy(gameObject);
+                
+            }
 
             
         }
