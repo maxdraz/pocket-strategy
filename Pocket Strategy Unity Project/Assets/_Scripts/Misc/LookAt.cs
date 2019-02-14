@@ -13,6 +13,8 @@ public class LookAt : MonoBehaviour
         {
             target = Camera.main.transform;
         }
+
+        transform.LookAt(target);
     }
 
     // Update is called once per frame

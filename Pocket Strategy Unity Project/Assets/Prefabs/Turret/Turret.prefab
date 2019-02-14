@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb558f9cfcf3054d8451b2e50ae1809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  time: 1
 --- !u!1 &1692299482890770684
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   turretTransform: {fileID: 7033608496891199447}
   fireRateUp: {fileID: 1114614864189805556}
   damageUp: {fileID: 5822833786136219718}
+  receivedEnergy: 0
 --- !u!54 &754030337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -369,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb558f9cfcf3054d8451b2e50ae1809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
+  time: 1
 --- !u!1 &5804501020926416343
 GameObject:
   m_ObjectHideFlags: 0

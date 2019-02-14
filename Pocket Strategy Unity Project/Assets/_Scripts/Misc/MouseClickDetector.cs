@@ -31,6 +31,7 @@ public class MouseClickDetector : MonoBehaviour
                     TurretFinal turret = hit.collider.GetComponentInParent<TurretFinal>();
                 if (turret.energy < turret.maxEnergy)
                 {
+                    
                     StartCoroutine(em.GiveEnergy(turret, turret.energyCD));
                 }
             }

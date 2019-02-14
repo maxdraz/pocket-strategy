@@ -51,6 +51,7 @@ public class EnergyManager : MonoBehaviour
            // StartCoroutine(eo.TravelTo(t.transform, cd));
 
             yield return new WaitForSeconds(cd);
+            t.receivedEnergy = true;
             t.energy += 1;
         }
      }
@@ -63,6 +64,7 @@ public class EnergyManager : MonoBehaviour
         }
         else
         {
+            t.receivedEnergy = true;
             t.energy -= 1;
 
             GameObject energyOrbUsedGO = (GameObject)Instantiate(energyOrbUsedPrefab, t.transform.position, t.transform.rotation);

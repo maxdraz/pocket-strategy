@@ -22,12 +22,13 @@ public class TurretFinal : MonoBehaviour
     public GameObject nearestEnemy;
 
     public Transform turretTransform;
-     GameObject gm;
+    GameObject gm;
 
     public TextMesh fireRateUp;
     public TextMesh damageUp;
-    
-    
+    public bool receivedEnergy = false;
+
+
 
     private void Start()
     {
@@ -38,33 +39,41 @@ public class TurretFinal : MonoBehaviour
 
     private void Update()
     {
-        CheckForUpgrades();
+        if (receivedEnergy)
+        {
+
+            CheckForUpgrades();
+            receivedEnergy = false;
+
+        }
+
+        
 
         //energy text
         energyText.text = energy.ToString() + "/" + maxEnergy.ToString();
 
-        if (nearestEnemy== null)
+        if (nearestEnemy == null)
         {
             //Reset turret rotation
             RotateTurret(transform.position + transform.forward, 2f);
             fireCDRemaining = fireCD;
         }
 
-        if(nearestEnemy == null && enemies.Count >= 1)
-        {           
+        if (nearestEnemy == null && enemies.Count >= 1)
+        {
             //Find New Enemy
             FindNewEnemy();
         }
-        else if(nearestEnemy && energy > 0)
+        else if (nearestEnemy && energy > 0)
         {
             Fire();
         }
-        
+
     }
 
     void FindNewEnemy()
     {
-        if(enemies == null)
+        if (enemies == null)
         {
             return;
         }
@@ -72,14 +81,14 @@ public class TurretFinal : MonoBehaviour
         {
             nearestEnemy = enemies.Dequeue();
         }
-        
+
     }
 
     void Fire()
     {
         Debug.Log(fireCDRemaining);
         fireCDRemaining -= Time.deltaTime;
-        if(fireCDRemaining <= 0)
+        if (fireCDRemaining <= 0)
         {
             fireCDRemaining = fireCD;
             //instantiate bullet
@@ -90,8 +99,8 @@ public class TurretFinal : MonoBehaviour
         }
         //rotate turret
         RotateTurret(nearestEnemy.transform.position, 5f);
-        
-        
+
+
     }
 
     void RotateTurret(Vector3 target, float lerpSpeed)
@@ -104,46 +113,53 @@ public class TurretFinal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
-            
+
             enemies.Enqueue(other.gameObject);
-            
+
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-       if (other.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
-            nearestEnemy = null; 
-          // enemies.Dequeue();
+            nearestEnemy = null;
+            // enemies.Dequeue();
         }
     }
 
     void CheckForUpgrades()
     {
-        if(energy < 2)
+        if (energy < 2)
         {
             energyText.color = Color.white;
             fireCD = originalFireCD;
             damage = originalDamage;
-            return;
-        }else if(energy == 2)
+            
+        } else if (energy == 2)
         {
             FireRateUp();
-            fireRateUp.gameObject.SetActive(true);
-        } else if(energy == maxEnergy){
+
+
+        } else if (energy == maxEnergy) {
 
             DamageUpgrade();
             damageUp.gameObject.SetActive(true);
+            
         }
     }
 
-    void FireRateUp()
+
+   
+
+     void FireRateUp()
     {
+        fireRateUp.gameObject.SetActive(true);
         fireCD = cooldownUpgrade;
         energyText.color = fireRateUp.color;
+        
     }
 
     void DamageUpgrade()
