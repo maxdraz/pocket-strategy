@@ -41,8 +41,8 @@ public class EnergyManager : MonoBehaviour
             energy -= 1;
             //instantiate energy orb
            GameObject energyOrbGO = (GameObject)Instantiate(energyOrbPrefab, transform.position, transform.rotation);
-            EnergyOrb eorb= GetComponent<EnergyOrb>();
-            eorb.target.position = t.gameObject.transform.position;
+            EnergyOrb eorb = energyOrbGO.GetComponent<EnergyOrb>();
+            eorb.target = t.gameObject.transform;
             eorb.CalculateSpeed(cd);
             
             //energyOrbGO.transform.position = transform.position;

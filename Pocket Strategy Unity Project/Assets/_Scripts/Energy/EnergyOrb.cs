@@ -17,6 +17,7 @@ public class EnergyOrb : MonoBehaviour
     {
         if (target != null)
         {
+            Debug.Log("moving to target");
             agent.SetDestination(target.position);
 
             if (agent.remainingDistance <= 0.1f)
