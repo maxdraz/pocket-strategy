@@ -28,6 +28,9 @@ public class TurretFinal : MonoBehaviour
     public TextMesh damageUp;
     public bool receivedEnergy = false;
 
+    public int numClicks;
+ 
+
 
 
     private void Start()
@@ -39,6 +42,18 @@ public class TurretFinal : MonoBehaviour
 
     private void Update()
     {
+
+        
+
+        if(numClicks >= maxEnergy)
+        {
+            numClicks = maxEnergy;
+        }
+        if(numClicks <= 0)
+        {
+            numClicks = 0;
+        }
+
         if (receivedEnergy)
         {
 
@@ -147,6 +162,7 @@ public class TurretFinal : MonoBehaviour
 
             DamageUpgrade();
             damageUp.gameObject.SetActive(true);
+            
             
         }
     }

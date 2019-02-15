@@ -47,7 +47,7 @@ public class HealthManager : MonoBehaviour
         baseDestroyed.gameObject.SetActive(true);
 
         gameOver.SetActive(true);
-        scoreText.text = "You survived " + espawner.currentWave.ToString() + " waves!";
+        scoreText.text = "You survived " + (espawner.currentWave +1) + " waves!";
 
         Time.timeScale = 0f;
 

@@ -43,6 +43,7 @@ public class EnergyManager : MonoBehaviour
         }
         else
         {
+           
             energy -= 1;
             //instantiate energy orb
            GameObject energyOrbGO = (GameObject)Instantiate(energyOrbPrefab, transform.position, transform.rotation);
@@ -57,6 +58,14 @@ public class EnergyManager : MonoBehaviour
             yield return new WaitForSeconds(cd);
             t.receivedEnergy = true;
             t.energy += 1;
+            
+
+            //if(t.energy < maxEnergy && t.numClicks > t.numClicks)
+            //{
+
+            //    Debug.Log("NUMCLICK RESET");
+            //    t.numClicks = 0;
+            //}
         }
      }
 
@@ -70,6 +79,8 @@ public class EnergyManager : MonoBehaviour
         {
             t.receivedEnergy = true;
             t.energy -= 1;
+            t.numClicks -= 1;
+
 
             GameObject energyOrbUsedGO = (GameObject)Instantiate(energyOrbUsedPrefab, t.transform.position, t.transform.rotation);
             EnergyOrb eorb = energyOrbUsedGO.GetComponent<EnergyOrb>();

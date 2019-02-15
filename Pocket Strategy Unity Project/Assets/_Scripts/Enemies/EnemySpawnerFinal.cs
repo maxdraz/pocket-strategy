@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawnerFinal : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class EnemySpawnerFinal : MonoBehaviour
     public List<GameObject> activeEnemies;
 
     public int currentWave = 0;
+  
+    public Text waveText;
     public bool spawning = false;
+
+    
 
     [System.Serializable]
     public class Wave
@@ -34,6 +39,8 @@ public class EnemySpawnerFinal : MonoBehaviour
         {
             spawnPoints[i] = transform.GetChild(i);
         }
+
+        waveText.text = "Wave: " + (currentWave + 1);
        
     }
 
@@ -135,8 +142,11 @@ public class EnemySpawnerFinal : MonoBehaviour
 
     void StartNewWave()
     {
+        
         waveCDRemaining = waveCD;
         currentWave++;
         spawning = false;
+
+        waveText.text = "Wave: " + (currentWave + 1);
     }
 }
