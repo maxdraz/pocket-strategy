@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   target: {fileID: 0}
+  powerAudio: {fileID: 8792188988363866691, guid: fc72b959096fecc4b999fa9262cb7c9b,
+    type: 3}
+  powerClip: {fileID: 8300000, guid: 249fd61d032980641bb6fcdd5a6ed5fe, type: 3}
 --- !u!135 &8196373665479766842
 SphereCollider:
   m_ObjectHideFlags: 0

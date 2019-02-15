@@ -11,12 +11,18 @@ public class BuildPad : MonoBehaviour
     MoneyManager mm;
     public float cooldown;
     public GameObject notEnoughTextGO;
+    public AudioSource turretPurchased;
+    public AudioClip purchaseClip;
 
     private void Awake()
     {
         gm = GameObject.FindWithTag("GM");
+        turretPurchased = gameObject.GetComponent<AudioSource>();
         mm = gm.GetComponent<MoneyManager>();
         cm = gm.GetComponent<CostManager>();
+
+        turretPurchased.clip = purchaseClip;
+
     }
 
     private void Start()
@@ -32,6 +38,7 @@ public class BuildPad : MonoBehaviour
         }
         else
         {
+            turretPurchased.Play();
             SpawnTurret();
         }
     }

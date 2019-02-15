@@ -29,7 +29,11 @@ public class TurretFinal : MonoBehaviour
     public bool receivedEnergy = false;
 
     public int numClicks;
- 
+
+    public AudioSource shootSource;
+    public AudioClip fire1;
+    public AudioClip fire2;
+    public AudioClip fire3;
 
 
 
@@ -111,6 +115,8 @@ public class TurretFinal : MonoBehaviour
             bullet.transform.position = bulletSpawn.position;
             bullet.GetComponent<Bullet>().damage = damage;
             bullet.GetComponent<Bullet>().target = nearestEnemy.transform;
+            shootSource.Play();
+
         }
         //rotate turret
         RotateTurret(nearestEnemy.transform.position, 5f);
@@ -152,16 +158,20 @@ public class TurretFinal : MonoBehaviour
             energyText.color = Color.white;
             fireCD = originalFireCD;
             damage = originalDamage;
+            shootSource.clip = fire1;
             
         } else if (energy == 2)
         {
             FireRateUp();
+            shootSource.clip = fire2;
+
 
 
         } else if (energy == maxEnergy) {
 
             DamageUpgrade();
             damageUp.gameObject.SetActive(true);
+            shootSource.clip = fire3;
             
             
         }

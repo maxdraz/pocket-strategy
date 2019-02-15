@@ -16,10 +16,16 @@ public class EnemyFinal : MonoBehaviour
 
     GameObject gm;
 
+    public AudioSource enemyAudio;
+    public AudioClip enemyClip;
+
     private void Start()
     {
         gm = GameObject.FindWithTag("GM");
         agent = GetComponent<NavMeshAgent>();
+        enemyAudio = GetComponent<AudioSource>();
+
+        enemyAudio.clip = enemyClip;
 
         if(baseTransform == null)
         {
@@ -37,6 +43,7 @@ public class EnemyFinal : MonoBehaviour
 
         if(health <= 0)
         {
+            enemyAudio.Play();
             Die();
             DeathExplode(); //Instantiating method
         }
@@ -52,6 +59,7 @@ public class EnemyFinal : MonoBehaviour
     {
         if(other.tag == "Base")
         {
+            enemyAudio.Play();
             //deal damage
             //destroy yourself
             DamageBase(damage);

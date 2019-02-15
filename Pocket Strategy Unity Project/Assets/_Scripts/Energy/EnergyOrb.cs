@@ -9,9 +9,13 @@ public class EnergyOrb : MonoBehaviour
     public float speed;
     public Transform target;
 
+    public AudioSource powerAudio;
+    public AudioClip powerClip;
+
     private void Awake()
     {
         //agent = GetComponent<NavMeshAgent>();
+        powerAudio.clip = powerClip;
     }
 
     private void Update()
@@ -26,6 +30,7 @@ public class EnergyOrb : MonoBehaviour
             transform.position += toTarget.normalized * speed * Time.deltaTime;
             if(dist < 1f)
             {
+                powerAudio.Play();
                 Destroy(gameObject);
                 
             }

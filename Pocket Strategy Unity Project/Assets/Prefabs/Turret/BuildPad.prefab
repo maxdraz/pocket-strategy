@@ -170,6 +170,8 @@ MonoBehaviour:
   price: 0
   cooldown: 1
   notEnoughTextGO: {fileID: 3702436579201463329}
+  turretPurchased: {fileID: 4533044955843572298}
+  purchaseClip: {fileID: 8300000, guid: a9671a97c273a7b48a9dfcbfa8a4e887, type: 3}
 --- !u!82 &4533044955843572298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -179,10 +181,11 @@ AudioSource:
   m_GameObject: {fileID: 6141233124320772979}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24301952, guid: 0ac7fb39e445048d89688f69c2a1839a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a9671a97c273a7b48a9dfcbfa8a4e887, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -273,6 +276,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5939469458543018138}
     m_Modifications:
+    - target: {fileID: 100000, guid: bcc8243aafe1378458fb0dd4771dbcdb, type: 3}
+      propertyPath: m_Name
+      value: Turret Base M1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcc8243aafe1378458fb0dd4771dbcdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -328,10 +335,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: bcc8243aafe1378458fb0dd4771dbcdb, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: bcc8243aafe1378458fb0dd4771dbcdb, type: 3}
-      propertyPath: m_Name
-      value: Turret Base M1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: bcc8243aafe1378458fb0dd4771dbcdb, type: 3}
       propertyPath: m_Materials.Array.data[0]
