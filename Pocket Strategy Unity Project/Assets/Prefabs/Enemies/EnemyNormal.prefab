@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8d19815a2ba734884a09c22d468343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 4
   damage: 10
   worth: 20
   DeathExplosion: {fileID: 6465324410193717779, guid: b65d76b106413ee4f8dbe10f37cce3aa,

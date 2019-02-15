@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 6141233124320772979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.8, y: 0.24000706, z: 6}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.54, y: 0.54, z: 0.54}
   m_Children:
   - {fileID: 3698697656739275815}
   - {fileID: 2377265028330444895}
@@ -167,8 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 1692299482890770684, guid: 52538a9e1722d3541b445334be8d2eec,
     type: 3}
-  cost: 100
-  costIncrement: 50
+  price: 0
   cooldown: 1
   notEnoughTextGO: {fileID: 3702436579201463329}
 --- !u!82 &4533044955843572298
